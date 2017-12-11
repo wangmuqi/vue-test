@@ -1,0 +1,109 @@
+@import 'variables';
+
+@mixin fb () {
+  font-weight: bold;
+}
+
+@mixin clearfix () {
+  &:after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+@mixin transform-center () {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-center () {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* 输入框 */
+@mixin input-text() {
+  width: 148px;
+  height: 28px;
+  line-height: 26px;
+  padding: 0 5px;
+  border: 1px solid $color-gray-d4;
+  background-color: #FFF;
+  color: $color-word-dark;
+  font-size: $font-size-base;
+  border-radius: 2px;
+}
+@mixin input-time() {
+  text-align: center;
+  width: 18px;
+  height: 28px;
+}
+@mixin input-ip() {
+  text-align: center;
+  width: 45px;
+  height: 24px;
+}
+@mixin input-short() {
+  width: 60px;
+}
+@mixin input-long() {
+  width: 240px;
+}
+@mixin input-big-long() {
+  width: 282px;
+}
+@mixin input-disabled() {
+  color: $color-base-light !important;
+  background-color: $color-gray-f3f4 !important;
+  cursor: no-drop;
+}
+
+/* 表单 */
+@mixin form-group-width($size) {
+  padding-left: $size + 10px;
+  .label{
+    float: left;
+    margin-left: -($size + 10px);
+    width: $size;
+  }
+}
+@mixin form-group-col($num) {
+  box-sizing: border-box;
+  float: left;
+  width: percentage(1/$num);
+}
+
+@mixin sub-container($num) {
+  width: percentage(1/$num);
+}
+
+/* 三角形 */
+@mixin triangle() {
+  display: inline-block;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+
+@mixin layout-two-clumn($width) {
+  $_width: 1px * $width;
+  $addWidth: 15px;
+
+  .label-title{
+    width: $_width;
+  }
+  .label-content{
+    padding-left: $_width + $addWidth;
+  }
+}
